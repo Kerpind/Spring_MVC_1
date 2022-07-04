@@ -43,5 +43,25 @@ HTTP 요청 메세지를 통해 클라이언트에서 서버로 데이터를 전
 > 서블릿에 종속되지 않는 형태를 구현하기 위해서 작업을 하는 것
 
 ## 9. 핸들러 패밍과 핸들러 어댑터
- + 
- + 
+ + 이전에 직접 Spring 만들었던 것에 대한 내용을 자동 제공된다며 설명해주는 시간이였다.
+
+## 10. 스프링 MVC - 시작하기
+ + @Controller 어노테이션이 있으면 자동으로 스프링 빈에 등록한다.
+ + 컴포넌트 스캔의 대상이 되는것이다.
+ + 스프링 MVC에서 어노테이션 기반 컨트롤러로 인식한다. RequestMappingHandlerMapping에서 핸들러 정보라고 인식할 수 있다는 뜻이다.
+ + @RequestMapping 으로도 인식시킬 수 있다.(그대신 @Component를 넣어야 한다.)
+ + 클래스 레벨에 붙어있어야 한다.
+ + @Component을 안적고 @RequestMapping만 적었다면 ServletApplication에서 Bean 등록을 해줘야 한다.
+
+## 11. 스프링 MVC - 컨트롤러 통합
+ + 하나의 컨트롤러에 역할을 분담했던 업무를 하나로 합칠수도 있다.
+ + 만약 경로가 중복이 있다면 @RequestMapping을 통해서 중복 부분을 제거할 수 있다.
+ + @RequestMapping에 명시한 경로에 바로 파일이 있다면 @RequestMapping만 적어두고 경로를 적지 않으면 된다.
+
+## 12. 스프링 MVC - 실용적인 방식
+ + ModelAndView를 사용하지 않고 String으로 변환 후 return값도 문자로 넘기면 자동으로 뷰로 판단에서 자동으로 진행된다.
+ + 데이터를 받아야 할 경우 받아야되는곳에 HttpServlet(Request/Response)를 사용하지 않고도 @RequestParam으로 직접 명시하여 사용할 수 있다.
+ + 그리고 그 값을 Model에 담아서는 사용하면 된다.
+ + 그런데 이렇게 코딩할 경우 Request 방식에 대한 제약이 없어서 POST, GET 둘다 가능하다.
+ + 그렇다보니 @RequestParam에서 method를 지정하여 제어를 해줘야 한다.
+ + 해당 구문보다 더 간결하게는 @GetMapping과 @PostMapping이 있다.
