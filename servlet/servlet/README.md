@@ -65,3 +65,5 @@ HTTP 요청 메세지를 통해 클라이언트에서 서버로 데이터를 전
  + 그런데 이렇게 코딩할 경우 Request 방식에 대한 제약이 없어서 POST, GET 둘다 가능하다.
  + 그렇다보니 @RequestParam에서 method를 지정하여 제어를 해줘야 한다.
  + 해당 구문보다 더 간결하게는 @GetMapping과 @PostMapping이 있다.
+
+
