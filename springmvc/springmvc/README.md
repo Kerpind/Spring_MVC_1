@@ -81,3 +81,28 @@ GET, POST의 전송방식은 구분없이 조회가 가능하다.
 
 이것을 간단히 요청 파라미터(request parameter) 조회라 한다.
 
+## 5. HTTP 요청 파라미터 - @RequestParam
+
+@Controller를 사용하게 되면 view를 리턴해줘야 한다.  
+그럴경우 @ResponseBody을 사용하면 HTTP 응답에 String을 바로 보낼 수 있다.  
+이건 후에 추가로 설명을 준다고 하였다.  
+
+@RequestParam을 압축할 수 있는 방법에 대해서 설명을 해준다.  
+
+단순 타입이면 @RequestParam을 생략할 수 있다.  
+
+required를 통해서 필수값 여부를 지정할 수 있다.  
+
+만약 false 형태로 하였을 경우 객채형이 아니라면 에러가 날 수 있다.  
+
+`int a = null` -> Error  
+`Integer a = null` -> next  
+
+defaultValue에 대해서도 설명해주었다.  
+defaultValue는 값이 없을 경우 기본 값을 지정해주는 속성이다.  
+빈 문자의 경우에도 처리가 가능하다.
+
+파라미터를 Map으로도 조회가 가능하다.  
+
+파라미터의 값이 1개가 확실하다면 Map 을 사용해도 되지만, 그렇지 않다면 MultiValueMap 을 사용하면 된다.  
+
