@@ -106,3 +106,24 @@ defaultValue는 값이 없을 경우 기본 값을 지정해주는 속성이다.
 
 파라미터의 값이 1개가 확실하다면 Map 을 사용해도 되지만, 그렇지 않다면 MultiValueMap 을 사용하면 된다.  
 
+## 6. HTTP 요청 파라미터 - @ModelAttribute
+
+롬복 @Data 를 사용하게 되면,  
+@Getter , @Setter , @ToString , @EqualsAndHashCode , @RequiredArgsConstructor 를 자동으로 적용해준다.  
+
+@ModelAttribute 속성을 사용하게 되면 모델 객체가 생성되고, 요청 파라미터의 값도 모두 들어가있다.  
+
+순서로는 예제로 설명하자면  
+> HelloData 객체 생성 -> 해당 이름의 객체로 프로퍼티를 찾은 후 프로퍼티의 setter를 호출해서 파라미터의 값을 입력(바인딩)`
+
+이렇게 된다.
+
+@ModelAttribute를 생략할 수 있다. @RequestParam과 혼란이 발생 할 수 있을거라 생각이 들지만 생략시 적용되는 규칙이 있다.  
+
+String, int, Integer 같은 단순 타입의 경우 @RequestParam을 사용하고, 나머지의 경우 @ModelAttribute를 사용한다.  
+단, argument resolver 로 지정해둔 타입은 되지 않는다.  
+argument resolver는 뒤에서 추가로 설명을 해준다고 한다.
+
+@ModelAttribute 안에 name도 설정해줄 수 있다고 한다.
+
+
