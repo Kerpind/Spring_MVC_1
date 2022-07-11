@@ -70,3 +70,14 @@ Postman을 통해서 MappingClassController 테스트를 해봤다.
 ![img.png](img.png)
 
 MultiValueMap은 하나의 키에 여러 값을 받을 때 사용된다.  
+
+## 5. HTTP 요청 파라미터 - 쿼리 파라미터, HTML Form
+
+클라이언트에서 서버로 요청 데이터를 전달할 때 주로 사용되는 방법을 설명해준다.
+
+GET, POST HTTP message body(주로 JSON을 사용)
+
+GET, POST의 전송방식은 구분없이 조회가 가능하다.  
+
+이것을 간단히 요청 파라미터(request parameter) 조회라 한다.
+
