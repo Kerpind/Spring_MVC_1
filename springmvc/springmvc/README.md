@@ -59,3 +59,14 @@ method를 지정해주는걸 다시 테스트 한다. GET 방식으로 테스트
 미디어 타입 조건으로도 매핑이 가능하다.  
 Accept 헤더로도 매핑이 가능하다.  
 
+## 3. 요청 매핑 - API 예시
+
+Postman을 통해서 MappingClassController 테스트를 해봤다.
+
+매핑 방법을 여러가지 예제를 보았다.
+
+## 4. HTTP 요청 - 기본, 헤더 조회
+
+![img.png](img.png)
+
+MultiValueMap은 하나의 키에 여러 값을 받을 때 사용된다.  
