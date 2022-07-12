@@ -146,3 +146,16 @@ HTTP 메세지 바디를 직접 조회할 때 : `@RequestBody`
 
 그리고 자동으로 @ModelAttribute를 적용하게 된다. 그래서 요청 파라미터를 처리하게 된다.  
 
+## 9. 응답 - 정적 리소스, 뷰 템플릿
+
+@RequestMapping에 대한 사용을 주로 알려준다.  
+
+HTML에 데이터를 보내주는걸 return 해줄 때 사용하는 형태이다.  
+
+void를 반환하는 경우 컨트롤러의 경로 이름과 뷰의 논리적 이름이 같으면 논리적 뷰의 이름으로 진행이 가능하다.  
+
+단, @Controller를 사용하여야 하고, HttpServletResponse , OutputStream(Writer) 같은 HTTP 메시지
+바디를 처리하는 파라미터가 없어야 가능하다.  
+
+
+
