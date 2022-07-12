@@ -167,5 +167,32 @@ HTML이나 뷰 템플릿을 사용해도 HTTP 응답 메시지 바디에 HTML �
 
 @RestController는 @Controller와 @ResponseBody가 포함된 어노테이션이다.  
 
+## 11. HTTP 메세지 컨버터
 
+메세지 컨버터는 인터페이스로 되어있다.
 
+스프링 부트는 다양한 메시지 컨버터를 제공하는데, 대상 클래스 타입과 미디어 타입 둘을 체크해서
+사용여부를 결정한다.
+
+만약 만족하지 않으면 다음 메세지 컨버터로 우선순위가 넘어가게 된다.
+
+그 중 주요한 메세지 컨버터를 알아보자.
+
+* `ByteArrayHttpMessageConverter` : `byte[]` 데이터를 처리한다.
+  + 클래스 타입: `byte[]` , 미디어타입: `*/*` ,
+  + 요청 예) `@RequestBody byte[] data`
+  + 응답 예) `@ResponseBody return byte[]` 쓰기 미디어타입 `application/octet-stream`
+* `StringHttpMessageConverter` : `String` 문자로 데이터를 처리한다.
+  + 클래스 타입: `String` , 미디어타입: `*/*`
+  + 요청 예) `@RequestBody String data`
+  + 응답 예) `@ResponseBody return "ok"` 쓰기 미디어타입 `text/plain`
+* `MappingJackson2HttpMessageConverter` : application/json
+  + 클래스 타입: 객체 또는 `HashMap` , 미디어타입 `application/json` 관련
+  + 요청 예) `@RequestBody HelloData data`
+  + 응답 예) `@ResponseBody return helloData` 쓰기 미디어타입 `application/json` 관련
+
+## 12. 요청 매핑 헨들러 어뎁터 구조
+
+argument resolver가 파라미터 작업 처리를 도와주고, @RequestBody, @ResponseBody, HttpEntity에 한하여 HTTP 메세지 컨버터를 통해 파라미터 작업 처리를 요청한다.
+
+그렇다보니 핸들러 어댑터는 정말 데이터 호출만 해주는 형태이다.  
