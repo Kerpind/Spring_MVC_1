@@ -126,4 +126,16 @@ argument resolver는 뒤에서 추가로 설명을 해준다고 한다.
 
 @ModelAttribute 안에 name도 설정해줄 수 있다고 한다.
 
+## 7. HTTP 요청 파라미터 - 단순 텍스트
+
+HttpEntity를 배우게 된다. 메세지 바디 정보를 직접 조회하는 기능으로 요청 파라미터를 조회하는 기능과는 관계가 없다.
+
+요청 파라미터 방식이란 쿼리스트링이나 POST 방식으로 HTML Form 데이터를 전송하는 방식을 말한다.  
+`(@RequestParam, @ModelAttribute)`  
+
+RequestEntity와 ResponseEntity를 배우게 되는데 뒤에서 자세히 설명해주신다 하였다.  
+
+요청 파라미터를 조회할 때 : `@RequestParam`, `@ModelAttribute`  
+HTTP 메세지 바디를 직접 조회할 때 : `@RequestBody`
+
 
