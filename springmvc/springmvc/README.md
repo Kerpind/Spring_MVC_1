@@ -164,6 +164,7 @@ HTML이나 뷰 템플릿을 사용해도 HTTP 응답 메시지 바디에 HTML �
 정적 리소스나 뷰 템플릿을 거치지 않고, 직접 HTTP 응답 메세지를 전달하는 경우를 설명한다.  
 
 > IOException을 사용하지 않는 이유..? 궁금하다..
+> 
 > 답 : 값을 받아오는게 없어서 필요가 없는것이다.
 
 @RestController는 @Controller와 @ResponseBody가 포함된 어노테이션이다.  
