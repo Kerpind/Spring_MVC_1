@@ -198,3 +198,5 @@ HTML이나 뷰 템플릿을 사용해도 HTTP 응답 메시지 바디에 HTML �
 argument resolver가 파라미터 작업 처리를 도와주고, @RequestBody, @ResponseBody, HttpEntity에 한하여 HTTP 메세지 컨버터를 통해 파라미터 작업 처리를 요청한다.
 
 그렇다보니 핸들러 어댑터는 정말 데이터 호출만 해주는 형태이다.  
+
+
